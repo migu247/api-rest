@@ -40,16 +40,16 @@ app.get('/api', (req, res, next) => {
 
 app.get('/api/:coleccion', (req, res, next) => { 
  req.collection.find((err, coleccion) => { 
-  if (err) return next(err); 
-  res.json(coleccion); 
+    if (err) return next(err); 
+    res.json(coleccion); 
   }); 
  }); 
  
 app.get('/api/:coleccion/:id', (req, res, next) => { 
-req.collection.findOne({_id: id(req.params.id)}, (err, elemento) => { 
-if (err) return next(err); 
-res.json(elemento); 
-}); 
+  req.collection.findOne({_id: id(req.params.id)}, (err, elemento) => { 
+    if (err) return next(err); 
+    res.json(elemento); 
+  }); 
 }); 
 
 app.post('/api/:coleccion', (req, res, next) => { 
@@ -70,26 +70,26 @@ app.post('/api/:coleccion', (req, res, next) => {
 }); 
 
 app.put('/api/:coleccion/:id', (req, res, next) => { 
-let elementoId = req.params.id; 
-let elementoNuevo = req.body; 
-req.collection.update({_id: id(elementoId)}, 
-{$set: elementoNuevo}, {safe: true, multi: false}, (err, elementoModif) => { 
-if (err) return next(err); 
- res.json(elementoModif); 
-}); 
+  let elementoId = req.params.id; 
+  let elementoNuevo = req.body; 
+  req.collection.update({_id: id(elementoId)}, 
+  {$set: elementoNuevo}, {safe: true, multi: false}, (err, elementoModif) => { 
+    if (err) return next(err); 
+    res.json(elementoModif); 
+  }); 
 }); 
  
 app.delete('/api/:coleccion/:id', (req, res, next) => { 
-let elementoId = req.params.id; 
+  let elementoId = req.params.id; 
 
-req.collection.remove({_id: id(elementoId)}, (err, resultado) => { 
-if (err) return next(err); 
-res.json(resultado); 
-}); 
+  req.collection.remove({_id: id(elementoId)}, (err, resultado) => { 
+    if (err) return next(err); 
+    res.json(resultado); 
+  }); 
 }); 
  
  
 // Iniciamos la aplicación 
 app.listen(port, () => { 
- console.log(`API REST ejecutándose en http://localhost:${port}/api/:coleccion/:id`); 
- });
+  console.log(`API REST ejecutándose en http://localhost:${port}/api/:coleccion/:id`); 
+});

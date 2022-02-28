@@ -1,135 +1,105 @@
 {
 	"info": {
-		"_postman_id": "f026ba86-2567-44a4-a0bc-853c46cda7c4",
-		"name": "API-REST",
+		"_postman_id": "749b02b6-9ee3-4224-a838-7396d743ecf6",
+		"name": "api-rest",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "api/products",
+			"name": "/api",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/products",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
+					"raw": "/api",
 					"path": [
-						"api",
-						"products"
+						"api"
 					]
-				}
+				},
+				"description": "Obtenemos todas las colecciones existentes en la DB."
 			},
 			"response": []
 		},
 		{
-			"name": "api/products/{id}",
+			"name": "/api/{coleccion}",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/products/15326",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
+					"raw": "/api/{coleccion}",
 					"path": [
 						"api",
-						"products",
-						"15326"
+						"{coleccion}"
 					]
-				}
+				},
+				"description": "Obtenemos todos los elementos de la tabla {coleccion}."
 			},
 			"response": []
 		},
 		{
-			"name": "api/products",
+			"name": "/api/{coleccion}/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "/api/{coleccion}/{id}",
+					"path": [
+						"api",
+						"{coleccion}",
+						"{id}"
+					]
+				},
+				"description": "Obtenemos el elemento indicado en {id} de la tabla{coleccion}."
+			},
+			"response": []
+		},
+		{
+			"name": "/api/{coleccion}",
 			"request": {
 				"method": "POST",
 				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "Nombre",
-							"value": "Producto",
-							"type": "default"
-						},
-						{
-							"key": "Precio",
-							"value": "12€",
-							"type": "default"
-						},
-						{
-							"key": "Foto",
-							"value": "product.png",
-							"type": "default"
-						},
-						{
-							"key": "categoria",
-							"value": "general",
-							"type": "default"
-						}
-					]
-				},
 				"url": {
-					"raw": "http://localhost:3000/api/products",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
+					"raw": "/api/{coleccion}",
 					"path": [
 						"api",
-						"products"
+						"{coleccion}"
 					]
-				}
+				},
+				"description": "Creamos un nuevo elemento en la tabla {coleccion}."
 			},
 			"response": []
 		},
 		{
-			"name": "api/products/{id}",
+			"name": "/api/{coleccion}/{id}",
 			"request": {
 				"method": "PUT",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/products/15326",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
+					"raw": "/api/{coleccion}/{id}",
 					"path": [
 						"api",
-						"products",
-						"15326"
+						"{coleccion}",
+						"{id}"
 					]
-				}
+				},
+				"description": "Modificamos el elmento {id} de la tabal {coleccion}."
 			},
 			"response": []
 		},
 		{
-			"name": "api/products/{id}",
+			"name": "/api/{coleccion}/{id}",
 			"request": {
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/products/15326",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
+					"raw": "/api/{coleccion}/{id}",
 					"path": [
 						"api",
-						"products",
-						"15326"
+						"{coleccion}",
+						"{id}"
 					]
-				}
+				},
+				"description": "Eliminamos el elemento {id} de la tabla {coleccion}."
 			},
 			"response": []
 		}
