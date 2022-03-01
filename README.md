@@ -11,15 +11,77 @@ Ver **Deployment** para conocer cómo desplegar el proyecto.
 
 ### Pre-requisitos 📋
 
-_Qué cosas necesitas para instalar el software y cómo instalarlas_
+_Lo primero que deberemos instalar es nuestro editor de textos, que en este caso será **Visual Studio Code**._
 
 ```
-Proporciona un ejemplo
+$ sudo snap install --classic code
+```
+_Para ejecutar VS Code en el directorio en el que nos encontramos, deberemos introducir:_
+
+```
+$ code .
 ```
 
+_Lo siguiente que necesitaremos será un servicio que nos permita comprobar nuestras api como es **Postman**_
+```
+$ sudo snap install postman 
+```
+
+_También instalaremos el gestor de paquetes **Node JS**_
+```
+$ sudo apt update
+$ sudo apt install npm
+```
+
+_Ahora instalaremos una extension que nos ayude a instalar y mantener Node:_
+```
+$ sudo npm clean -f 
+$ sudo npm i -g n 
+```
+_Y lo actualizamos NodeJS a la última version:_
+```
+$ sudo n stable
+```
+
+
+_Para mantener nuestros en la nube y no perder versiones antiguas de nuestros proyectos necesitaremos un repositorio de archivos. Para esto instalaremos **Git** y configuraremos los datos:_
+```
+$ sudo apt install git 
+$ git config --global user.name mafg17 
+$ git config --global user.email mafg17@alu.ua.es
+$ git config --list 
+```
+
+_A continuación instalaremos las distintas bibliotecas que necesitaremos:_
+
+- **Express**
+```
+$ npm i -S express 
+```
+- **Nodemon**
+```
+$ npm i -D nodemon
+```
+_Necesitamos alguna manera de saber que esta pasando en nuestro servidor. Para esto utilizaremos un motor de registro como es **Morgan**. Lo instalamos:_
+```
+$ npm i -S morgan 
+```
+
+_Finalmente necesitaremos una base de datos para guardar las posibles peticiones que enviemos. Utilizaremos **MongoDB**, y lo instalaremos de la siguiente forma:_
+```
+$ sudo apt update 
+$ sudo apt install -y mongodb 
+```
+_Ahora, dentro de nuestro proyecto debemos instalar las bibliotecas **Mongo**. Para eso introducimos lo siguiente en la consola:_
+```
+$ cd  
+$ cd node/api-rest 
+$ npm i -S mongodb 
+$ npm i -S mongojs 
+```
 ### Instalación 🔧
 
-_Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose_
+_Para comenzar lo que debemos hacer es crear el repositorio en el equipo_
 
 _Indica cómo será ese paso_
 
