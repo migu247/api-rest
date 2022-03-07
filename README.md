@@ -7,7 +7,7 @@ _Ejemplo de WS REST con NodeJS que proporciona un API CRUD para gestionar una DB
 _Para obtener una copia del repositorio deberemos introducir en nuestro terminal lo siguiente:_
 
 ```
-$ git clone https://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@github.com/migu247/api-rest api-rest
+$ git clone https://migu247@github.com/migu247/api-rest api-rest
 
 ```
 
@@ -49,9 +49,7 @@ $ sudo n stable
 _Para mantener nuestros en la nube y no perder versiones antiguas de nuestros proyectos necesitaremos un repositorio de archivos. Para esto instalaremos **Git** y configuraremos los datos:_
 ```
 $ sudo apt install git 
-$ git config --global user.name mafg17 
-$ git config --global user.email mafg17@alu.ua.es
-$ git config --list 
+
 ```
 
 _A continuación instalaremos las distintas bibliotecas que necesitaremos:_
