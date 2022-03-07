@@ -1,0 +1,163 @@
+{
+	"info": {
+		"_postman_id": "d81f08e5-9402-402e-8723-cd8621f02859",
+		"name": "api-rest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/api",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api"
+					]
+				},
+				"description": "Obtenemos todas las colecciones existentes en la DB."
+			},
+			"response": []
+		},
+		{
+			"name": "/api/{coleccion}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/personas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"personas"
+					]
+				},
+				"description": "Obtenemos todos los elementos de la tabla {coleccion}."
+			},
+			"response": []
+		},
+		{
+			"name": "/api/{coleccion}/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/personas/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"personas",
+						""
+					]
+				},
+				"description": "Obtenemos el elemento indicado en {id} de la tabla{coleccion}."
+			},
+			"response": []
+		},
+		{
+			"name": "/api/{coleccion}",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "password1234",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"perro\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/personas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"personas"
+					]
+				},
+				"description": "Creamos un nuevo elemento en la tabla {coleccion}."
+			},
+			"response": []
+		},
+		{
+			"name": "/api/{coleccion}/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "password1234",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4000/api/personas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"personas"
+					]
+				},
+				"description": "Modificamos el elmento {id} de la tabal {coleccion}."
+			},
+			"response": []
+		},
+		{
+			"name": "/api/{coleccion}/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "password1234",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4000/api/personas/621d6febc45e36451fc298b2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"personas",
+						"621d6febc45e36451fc298b2"
+					]
+				},
+				"description": "Eliminamos el elemento {id} de la tabla {coleccion}."
+			},
+			"response": []
+		}
+	]
+}

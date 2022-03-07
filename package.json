@@ -26,7 +26,7 @@
   "homepage": "https://github.com/migu247/api-rest#readme",
   "dependencies": {
     "express": "^4.17.3",
-    "mongodb": "^4.4.0",
+    "mongodb": "^4.4.1",
     "mongojs": "^3.1.0",
     "morgan": "^1.10.0"
   },
