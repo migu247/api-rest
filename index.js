@@ -2,6 +2,13 @@
 
 const port = process.env.PORT || 4000;
 
+const https = require('https');
+const fs = require('fs');
+
+const OPTIONS_HTTPS = {
+  key: fs.readFileSync('./cert/key.pem'),
+  cert: fs.readFileSync('./cert/cert.pem')
+}
 const express = require('express');
 const logger = require('morgan');
 const mongojs = require('mongojs');
@@ -110,7 +117,6 @@ app.delete('/api/:coleccion/:id', auth,(req, res, next) => {
 }); 
  
  
-// Iniciamos la aplicación 
-app.listen(port, () => { 
-  console.log(`API REST ejecutándose en http://localhost:${port}/api/:coleccion/:id`); 
+https.createServer(OPTIONS_HTTPS, app).listen(port, () => { 
+  console.log(`SEC WS API REST ejecutándose en http://localhost:${port}/api/:coleccion/:id`); 
 });
