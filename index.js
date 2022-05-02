@@ -80,11 +80,11 @@ app.get('/api/:coleccion/:id', (req, res, next) => {
   }); 
 }); 
 
-app.post('/api/:coleccion', auth,(req, res, next) => { 
+app.post('/api/:coleccion', (req, res, next) => { 
   const elemento = req.body; 
   console.log(elemento);
 
-  if (!elemento.nombre) { 
+  if (!elemento.title) { 
     res.status(400).json ({ 
     error: 'Bad data', 
     description: 'Se precisa al menos un campo <nombre>' 
@@ -97,7 +97,7 @@ app.post('/api/:coleccion', auth,(req, res, next) => {
   } 
 }); 
 
-app.put('/api/:coleccion/:id', auth,(req, res, next) => { 
+app.put('/api/:coleccion/:id',(req, res, next) => { 
   let elementoId = req.params.id; 
   let elementoNuevo = req.body; 
   req.collection.update({_id: id(elementoId)}, 
@@ -107,7 +107,7 @@ app.put('/api/:coleccion/:id', auth,(req, res, next) => {
   }); 
 }); 
  
-app.delete('/api/:coleccion/:id', auth,(req, res, next) => { 
+app.delete('/api/:coleccion/:id',(req, res, next) => { 
   let elementoId = req.params.id; 
 
   req.collection.remove({_id: id(elementoId)}, (err, resultado) => { 
